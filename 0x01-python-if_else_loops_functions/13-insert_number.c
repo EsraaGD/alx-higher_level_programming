@@ -3,14 +3,13 @@
  * insert_node - Inserts a number into a sorted list
  * @head: A pointer the head of the linked list
  * @number: number to insert
- * @new: uGUEG
  * Return: a pointer to the new node
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *node = *head;
-	listint_t *new = NULL;
+	listint_t *node = *head, *new;
 
+	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
 	new->n = number;
