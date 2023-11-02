@@ -6,7 +6,7 @@ if __name__ == "__main__":
     noarg = len(sys.argv) - 1
 
     if noarg == 0:
-        print("0 argument.")
+        print("0 arguments.")
 
     elif noarg == 1:
         print("1 argument:")
