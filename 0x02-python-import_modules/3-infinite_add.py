@@ -3,10 +3,10 @@ if __name__ == "__main__":
 
 import sys
 
-addme = sys.argv[1:]
+addme = len(sys.argv)
 res = 0
 
-for nom in addme:
-    res += int(nom)
+for nom in range(addme - 1):
+    res += int(sys.argv[nom + 1])
 
 print("{}".format(res))
