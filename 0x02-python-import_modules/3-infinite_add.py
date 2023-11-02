@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+if __name__ == "__main__":
 
 import sys
 
 addme = sys.argv[1:]
-sum_result = 0
+res = 0
 
-for arg in addme:
-    sum_result += int(arg)
+for nom in addme:
+    res += int(nom)
 
-print(sum_result)
+print("{}".format(res))
