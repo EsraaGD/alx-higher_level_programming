@@ -9,41 +9,51 @@
 int is_palindrome(listint_t **head)
 {
     if (*head == NULL || (*head)->next == NULL)
-        return 1;  // An empty list or a single-element list is a palindrome
+        return 1;
 
-    listint_t *slow = *head;
-    listint_t *fast = *head;
-    listint_t *first_half = *head;
-    listint_t *second_half;  // Declare the variable here
+    listint_t *slow = *head, *fast = *head, *first_half = *head, *dup = NULL;
 
-    while (fast && fast->next)
-    {
-        slow = slow->next;
-        fast = fast->next->next;
+    while (1)
+	{
+		fast = fast->next->next;
+        if (!fast)
+		{
+			dup = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
     }
 
-     listint_t *reverse_linked_list(listint_t *head);
+     reverse_listint(&dup);
 
-    // Compare the first half and the reversed second half
-    while (second_half)
+    while (dup && first_half)
     {
-        if (first_half->n != second_half->n)
-            return 0;  // Not a palindrome
+        if (first_half->n == dup->n)
+		{
+			dup = dup->next;
+			first_half = first_half->next;
+		}
+		else
+			return 0;
+	}
 
-        first_half = first_half->next;
-        second_half = second_half->next;
-    }
-
-    return 1;  // It is a palindrome
+	if (!dup)
+		return (1);
+	return (0);
 }
 
-listint_t *reverse_linked_list(listint_t *head)
+void reverse_listint(listint_t **head)
 {
     listint_t *prev = NULL;
     listint_t *current = head;
     listint_t *next_node;
 
-    while (current != NULL)
+    while (current)
     {
         next_node = current->next;
         current->next = prev;
@@ -51,5 +61,5 @@ listint_t *reverse_linked_list(listint_t *head)
         current = next_node;
     }
 
-    return prev;
+    *head =  prev;
 }

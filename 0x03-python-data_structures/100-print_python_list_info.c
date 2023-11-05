@@ -1,4 +1,5 @@
 #define PY_SSIZE_T_CLEAN
+#include "lists.h"
 #include <Python.h>
 
 void print_python_list_info(PyObject *p) {
