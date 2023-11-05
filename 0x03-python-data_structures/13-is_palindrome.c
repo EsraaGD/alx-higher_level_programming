@@ -50,7 +50,7 @@ int is_palindrome(listint_t **head)
 void reverse_listint(listint_t **head)
 {
 	listint_t *prev = NULL;
-	listint_t *current = head;
+	listint_t *current = *head;
 	listint_t *next_node;
 
 	while (current)
