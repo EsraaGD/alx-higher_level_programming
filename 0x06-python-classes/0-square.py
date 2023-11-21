@@ -5,6 +5,3 @@
 class Square:
     """Empty class"""
     pass
-
-
-This is a test
