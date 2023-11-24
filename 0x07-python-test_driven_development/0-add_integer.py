@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-    """Define int additon function"""
-    
-    
+"""Define int additon function"""
+
+
 def add_integer(a, b=98):
     """Adds two numbers a & b that are integers or floats
 
