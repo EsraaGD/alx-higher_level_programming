@@ -12,7 +12,7 @@ My name is
 >>> say_my_name("123", "456")
 My name is 123 456
 
->>> say_my_name(738 ,"Doe")
+>>> say_my_name(738, "Doe")
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
