@@ -4,10 +4,10 @@
 My name is Jane Doe
 
 >>> say_my_name("Jane")
-My name is Jane
+My name is Jane 
 
 >>> say_my_name("")
-My name is
+My name is  
 
 >>> say_my_name("123", "456")
 My name is 123 456
@@ -25,4 +25,4 @@ TypeError: last_name must be a string
 >>> say_my_name("Jane", "Doe", "Stupiduser")
 Traceback (most recent call last):
 ...
-TypeError: say_my_name() takes 1 to 2 positional arguments
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
