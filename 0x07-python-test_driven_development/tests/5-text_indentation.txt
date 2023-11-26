@@ -1,35 +1,43 @@
->>> text_identation = __import__('5-text_identation').text_identation
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 
 >>> example = "This is a sample text. It contains some questions: What is the purpose? How does it work? Let's see."
 
->>> text_identation(example)
-This is a sample text
-It contains some questions
-What is the purpose
-How does it work
-Let's see
+>>> text_indentation(example)
+This is a sample text.
+<BLANKLINE>
+It contains some questions:
+<BLANKLINE>
+What is the purpose?
+<BLANKLINE>
+How does it work?
+<BLANKLINE>
+Let's see.
+<BLANKLINE>
+<BLANKLINE>
 
->>> text_identation("MynameisJaneDoe)
+>>> text_indentation("MynameisJaneDoe")
 MynameisJaneDoe
 
->>> text_identation(".?.:.!.")
-<BLANKLINE>
+>>> text_indentation("sample .?.")
+sample.
 <BLANKLINE>
 ?
 <BLANKLINE>
-<BLANKLINE>
 .
 <BLANKLINE>
 <BLANKLINE>
-:
-<BLANKLINE>
-<BLANKLINE>
-!
-<BLANKLINE>
-<BLANKLINE>
-.
 
->>> text_identation(123)
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("BATMAN", "ROBIN")
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation(123)
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
