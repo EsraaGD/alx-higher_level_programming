@@ -1,0 +1,35 @@
+>>> text_identation = __import__('5-text_identation').text_identation
+
+>>> example = "This is a sample text. It contains some questions: What is the purpose? How does it work? Let's see."
+
+>>> text_identation(example)
+This is a sample text
+It contains some questions
+What is the purpose
+How does it work
+Let's see
+
+>>> text_identation("MynameisJaneDoe)
+MynameisJaneDoe
+
+>>> text_identation(".?.:.!.")
+<BLANKLINE>
+<BLANKLINE>
+?
+<BLANKLINE>
+<BLANKLINE>
+.
+<BLANKLINE>
+<BLANKLINE>
+:
+<BLANKLINE>
+<BLANKLINE>
+!
+<BLANKLINE>
+<BLANKLINE>
+.
+
+>>> text_identation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
