@@ -119,7 +119,7 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Return biggest area rec 
+        """Return biggest area rec
 
         Args:
             rect_1 (rectangle): instance 1 of rec
