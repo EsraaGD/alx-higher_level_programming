@@ -1,43 +1,33 @@
 #!/usr/bin/python3
-"""_summary_
-        """
+"""This module defines a rectangle with private attributes width and height.
+    """
 
 
 class Rectangle:
-    """_summary_
+    """Represetns a rectangle
     """
-
-    def __init__(self, width=0, height=0):
-        """_summary_
-
-        Args:
-            width (int, optional): _description_. Defaults to 0.
-            height (int, optional): _description_. Defaults to 0.
-        """
-        self.width = width
-        self.height = height
 
     @property
     def width(self):
-        """_summary_
+        """Getter for width attribute
 
         Returns:
-            _type_: _description_
+            int: width of rec
         """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """_summary_
+        """Setter for width attribute
 
         Args:
-            value (_type_): _description_
+            value (int): width to set
 
         Raises:
-            TypeError: _description_
-            ValueError: _description_
+            TypeError: If width is not an integer
+            ValueError: If width is less than zero
         """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be >= 0")
@@ -45,26 +35,36 @@ class Rectangle:
 
     @property
     def height(self):
-        """_summary_
+        """Getter for height attribute
 
         Returns:
-            _type_: _description_
+            int: height of rec
         """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """_summary_
+        """Setter for height attribute
 
         Args:
-            value (_type_): _description_
+            value (int): height to set
 
         Raises:
-            TypeError: _description_
-            ValueError: _description_
+            TypeError: If height is not an integer
+            ValueError: If height is less than zero
         """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def __init__(self, width=0, height=0):
+        """Initalize a rec instance
+
+        Args:
+        width (int): Width of rec. Defaults to 0.
+        height (int): Height of rec. Defaults to 0.
+        """
+        self.width = width
+        self.height = height
