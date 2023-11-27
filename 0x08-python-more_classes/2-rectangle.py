@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """This module defines a rectangle with private attributes width and height.
-"""
+    """
 
 
 class Rectangle:
     """Represetns a rectangle
     """
 
+    @property
     def width(self):
         """Getter for width attribute
 
@@ -15,6 +16,7 @@ class Rectangle:
         """
         return self.__width
 
+    @width.setter
     def width(self, value):
         """Setter for width attribute
 
@@ -27,10 +29,11 @@ class Rectangle:
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
+    @property
     def height(self):
         """Getter for height attribute
 
@@ -39,6 +42,7 @@ class Rectangle:
         """
         return self.__height
 
+    @height.setter
     def height(self, value):
         """Setter for height attribute
 
@@ -51,7 +55,7 @@ class Rectangle:
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if value > 0:
+        elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
@@ -59,8 +63,8 @@ class Rectangle:
         """Initalize a rec instance
 
         Args:
-            width (int): Width of rec. Defaults to 0.
-            height (int): Height of rec. Defaults to 0.
+        width (int): Width of rec. Defaults to 0.
+        height (int): Height of rec. Defaults to 0.
         """
         self.width = width
         self.height = height
