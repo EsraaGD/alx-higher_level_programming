@@ -7,6 +7,16 @@ class Rectangle:
     """Represetns a rectangle
     """
 
+    def __init__(self, width=0, height=0):
+        """Initalize a rec instance
+
+        Args:
+            width (int): Width of rec. Defaults to 0.
+            height (int): Height of rec. Defaults to 0.
+        """
+        self.width = width
+        self.height = height
+
     @property
     def width(self):
         """Getter for width attribute
@@ -58,13 +68,3 @@ class Rectangle:
         if value > 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
-    def __init__(self, width=0, height=0):
-        """Initalize a rec instance
-
-        Args:
-            width (int): Width of rec. Defaults to 0.
-            height (int): Height of rec. Defaults to 0.
-        """
-        self.width = width
-        self.height = height
