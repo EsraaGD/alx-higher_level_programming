@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""_summary_
+"""Locking
     """
 
 
-class Lockedclass:
-    """locking
+class LockedClass:
+    """Locked
     """
-    __slots__ = ('first_name')
+    __slots__ = ['first_name']
