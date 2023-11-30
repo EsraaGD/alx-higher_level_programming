@@ -1,0 +1,1 @@
+Test-driven development (TDD) is defined as an iterative methodology that prioritizes the creation of and checking against test cases at every stage of software development, by converting each component of the application into a test case before it is built and then testing and tracking the component repeatedly.
