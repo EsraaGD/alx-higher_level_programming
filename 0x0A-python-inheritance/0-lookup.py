@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-    """Something to write
-    """
+"""Something to write
+"""
 
 
 def lookup(obj):
