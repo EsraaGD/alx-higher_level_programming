@@ -9,8 +9,10 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """Intialize a new rectangle"""
 
-        self.__width = super().integer_validator("width", width)
-        self.__height = super().integer_validator("height", height)
+        super().integer_validator("width", width)
+        self.__width = width
+        super().integer_validator("height", height)
+        self.__height = height
 
     def area(self):
         """returns the area of the rectangle"""
@@ -18,6 +20,4 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """returns the print() and str() representation of a Rectangle"""
-        string = "[" + str(self.__class__.__name__) + "] "
-        string += str(self.__width) + "/" + str(self.__height)
-        return string
+        return f"[{self.__class__.__name__}] {self.__width}/{self.__height}"
