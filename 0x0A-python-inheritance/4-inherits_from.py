@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""Something
+"""Something to write
 """
 
 
 def inherits_from(obj, a_class):
-    """_summary_
+    """Check if obj is instance of class that inherited
 
     Args:
-        obj (_type_): _description_
-        a_class (_type_): _description_
+        obj: Object to check
+        a_class: Class to compare against
 
     Returns:
-        _type_: _description_
+        True if true fasle if false
     """
     return issubclass(type(obj), a_class)
