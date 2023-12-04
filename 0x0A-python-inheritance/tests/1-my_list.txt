@@ -1,0 +1,13 @@
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list_instance = MyList([4, 2, 8, 1, 5])
+>>> my_list_instance.print_sorted()
+[1, 2, 4, 5, 8]
+
+>>> empty_list_instance = MyList()
+>>> empty_list_instance.print_sorted()
+[]
+
+>>> single_element_instance = MyList([456])
+>>> single_element_instance.print_sorted()
+[456]
