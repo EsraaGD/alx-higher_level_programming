@@ -3,10 +3,14 @@
 """
 
 
-def area(self):
-    """_summary_
-
-    Raises:
-        Exception: Area is not implemented
+class BaseGeometry():
+    """Empty
     """
-    raise Exception("area() is not implemented")
+
+    def area(self):
+        """Area
+
+        Raises:
+            Exception: Area is not implemented
+        """
+        raise Exception("area() is not implemented")
