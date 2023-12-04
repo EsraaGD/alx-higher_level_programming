@@ -18,17 +18,17 @@ Traceback (most recent call last):
 ...
 ValueError: side_length must be greater than 0
 
->>> b.integer_validator()
+>>> geometry.integer_validator()
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> b.integer_validator("integer")
+>>> geometry.integer_validator("integer")
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> b.integer_validator("integer", 1, 2)
+>>> geometry.integer_validator("integer", 1, 2)
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
