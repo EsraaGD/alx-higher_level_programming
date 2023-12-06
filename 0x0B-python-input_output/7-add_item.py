@@ -5,8 +5,8 @@ Contains a script that adds all command line arguments to a Python list and
 saves the list as a JSON representation in a file named add_item.json.
 """
 import sys
-from save_to_json_file import save_to_json_file
-from load_from_json_file import load_from_json_file
+from 5-save_to_json_file import save_to_json_file
+from 6-load_from_json_file import load_from_json_file
 
 
 def add_items_to_list():
