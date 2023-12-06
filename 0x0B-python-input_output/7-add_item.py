@@ -12,7 +12,7 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
 def add_items_to_list():
-    """Adds all command line arguments to a Python list and saves it to a file."""
+    """Adds all command line arguments to a Python list and saves to a file."""
     try:
         existing_list = load_from_json_file("add_item.json")
     except FileNotFoundError:
