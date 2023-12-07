@@ -1,2 +1,2 @@
 This is almost a sentence
-If only it could be complete. 
+If only it could be complete.
