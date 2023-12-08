@@ -1,12 +1,19 @@
 #!/usr/bin/python3
+    """Module that contains class Base"""
 import json
 import csv
 
 
 class Base:
+    """Base class for managing instances"""
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initialize a new Base instance.
+
+        Args:
+            id (int): The identifier for the instance. Def to None.
+        """
         if id is not None:
             self.id = id
         else:
@@ -15,6 +22,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """Convert a list of dictionaries to a JSON string.
+
+        Args:
+            list_dictionaries (list): List of dictionaries.
+
+        Returns:
+            str: JSON representation of the list of dictionaries.
+        """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
@@ -22,6 +37,11 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """Save a list of instances to a JSON file.
+
+        Args:
+            list_objs (list): List if instances
+        """
         if list_objs is None:
             list_objs = []
 
@@ -35,6 +55,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """Convert a JSON string to a list of dictionaries.
+
+        Args:
+            json_string (str): JSON string.
+
+        Returns:
+            list: List of dictionaries.
+        """
         if json_string is None or json_string == "":
             return []
         else:
@@ -42,6 +70,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Create an instance with attributes set from a dictionary.
+        
+        Args:
+            **dictionary: Double pointer to a dictionary.
+
+        Returns:
+            Base: Instance with attributes set.
+        """
         if cls.__name__ == "Rectangle":
             dummy = cls(10, 10)
         else:
@@ -51,6 +87,11 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Load instances from a JSON file.
+
+        Returns:
+            list: List of instances.
+        """
         filename = "{}.json".format(cls.__name__)
         try:
             with open(filename, 'r') as file:
@@ -63,6 +104,11 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """Save a list of instances to a CSV file.
+
+        Args:
+            list_objs (list): List of instances
+        """
         filename = "{}.csv".format(cls.__name__)
 
         with open(filename, mode='w') as file:
@@ -76,6 +122,11 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """Load instances from a CSV file.
+
+        Returns:
+            list: list of instances
+        """
         filename = "{}.csv".format(cls.__name__)
         inst_list = []
 
