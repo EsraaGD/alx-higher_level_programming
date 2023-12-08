@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import csv
 
 
 class Base:
@@ -77,20 +78,20 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         filename = "{}.csv".format(cls.__name__)
-        inst = []
+        inst_list = []
 
         try:
             with open(filename, mode='r') as file:
                 reader = csv.reader(file)
                 for row in reader:
                     if cls.__name__ == "Rectangle":
-                        inst = cls(id=int(row[0]), width=int(row[1]), height=int(row[2]),
-                                   x=int(row[3]), y=int(row[4]))
+                        inst = cls(id=int(row[0]), width=int(row[1]),
+                                height=int(row[2]),x=int(row[3]), y=int(row[4]))
                     elif cls.__name__ == "Square":
                         inst = cls(id=int(row[0]), size=int(row[1]),
                                    x=int(row[2]), y=int(row[3]))
-                    inst.append(inst)
+                    inst_list.append(inst)
         except FileNotFoundError:
             pass
 
-        return inst
+        return inst_list
