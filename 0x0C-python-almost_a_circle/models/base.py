@@ -70,8 +70,7 @@ class Base:
 
             for obj in list_objs:
                 if cls.__name__ == "Rectangle":
-                    writer.writerow(
-                        [obj.id, obj.width, obj.height, obj.x, obj.y])
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
                 elif cls.__name__ == "Square":
                     writer.writerow([obj.id, obj.size, obj.x, obj.y])
 
@@ -85,11 +84,22 @@ class Base:
                 reader = csv.reader(file)
                 for row in reader:
                     if cls.__name__ == "Rectangle":
-                        inst = cls(id=int(row[0]), width=int(row[1]),
-                                height=int(row[2]),x=int(row[3]), y=int(row[4]))
+                        inst = cls(
+                            id=int(row[0]),
+                            width=int(row[1]),
+                            height=int(row[2]),
+                            x=int(row[3]),
+                            y=int(row[4])
+                        )
+
                     elif cls.__name__ == "Square":
-                        inst = cls(id=int(row[0]), size=int(row[1]),
-                                   x=int(row[2]), y=int(row[3]))
+                        inst = cls(
+                            id=int(row[0]),
+                            size=int(row[1]),
+                            x=int(row[2]),
+                            y=int(row[3])
+                        )
+
                     inst_list.append(inst)
         except FileNotFoundError:
             pass
