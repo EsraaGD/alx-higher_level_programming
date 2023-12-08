@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from models.rectangle import rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -17,8 +17,8 @@ class Square(Rectangle):
 
     def __str__(self):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-    
-    def update(self, *args, *kwargs):
+
+    def update(self, *args, **kwargs):
         if args:
             if len(args) >= 1:
                 self.id = args[0]
