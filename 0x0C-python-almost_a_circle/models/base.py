@@ -71,7 +71,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Create an instance with attributes set from a dictionary.
-        
+
         Args:
             **dictionary: Double pointer to a dictionary.
 
@@ -156,8 +156,7 @@ class Base:
             pass
 
         return inst_list
-    
-    
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Use turtle to draw rect and square
@@ -168,15 +167,16 @@ class Base:
         """
         import turtle
         from random import randrange
-        
+        config.ssh.forward_x11 = True
+
         screen = turtle.Screen()
         screen.bgcolor("pink")
         screen.title("Rectangles and Squares")
-        
+
         for r in list_rectangles:
             t = turtle.Turtle()
             t.color((randrange(255), randrange(255), randrange(255)))
-            
+
             turtle.penup()
             turtle.goto(r.x, r.y)
             turtle.pendown()
@@ -188,7 +188,7 @@ class Base:
             turtle.left(90)
             turtle.forward(r.height)
             turtle.left(90)
-            
+
         for s in list_squares:
             turtle.penup()
             turtle.goto(s.x, s.y)
