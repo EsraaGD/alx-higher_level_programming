@@ -156,3 +156,45 @@ class Base:
             pass
 
         return inst_list
+    
+    
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Use turtle to draw rect and square
+
+        Args:
+            list_rectangles (list): List of Rectangle instances
+            list_squares (list): List of Square instances
+        """
+        import turtle
+        from random import randrange
+        
+        screen = turtle.Screen()
+        screen.bgcolor("pink")
+        screen.title("Rectangles and Squares")
+        
+        for r in list_rectangles:
+            t = turtle.Turtle()
+            t.color((randrange(255), randrange(255), randrange(255)))
+            
+            turtle.penup()
+            turtle.goto(r.x, r.y)
+            turtle.pendown()
+            turtle.forward(r.width)
+            turtle.left(90)
+            turtle.forward(r.height)
+            turtle.left(90)
+            turtle.forward(r.width)
+            turtle.left(90)
+            turtle.forward(r.height)
+            turtle.left(90)
+            
+        for s in list_squares:
+            turtle.penup()
+            turtle.goto(s.x, s.y)
+            turtle.pendown()
+            for _ in range(4):
+                turtle.forward(s.size)
+                turtle.left(90)
+
+        turtle.done()
