@@ -10,7 +10,7 @@ if __name__ == "__main__":
         Rectangle(100, 40),
         Rectangle(90, 110, 30, 10),
         Rectangle(20, 25, 110, 80)
-]
+    ]
 
 list_squares = [
     Square(35),

@@ -12,7 +12,7 @@ class Square(Rectangle):
             size (int): Size of the square
             x (int, optional): Initialize a new Square instance. Defaults to 0.
             y (int, optional): Y-coordinate of the square. Defaults to 0.
-            id (_type_, optional): Identifier for the instance. Defaults to None.
+            id (_type_, optional): Identifier for the instance.
         """
         super().__init__(size, size, x, y, id)
 
