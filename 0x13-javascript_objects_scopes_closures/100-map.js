@@ -1,4 +1,5 @@
 #!/usr/bin/node
-const list = require('./100-data.js').list;
-console.log(list);
-console.log(list.map((item, index) => item * index));
+const oldArr = require('./100-data').list;
+console.log(oldArr);
+const newArr = oldArr.map((el, i) => el * i);
+console.log(newArr);
