@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     # Create SQL query to select cities of the given state
     sql_query = """
-                SELECT cities.id, cities.name, states.name
+                SELECT GROUP_CONCAT(cities.name SEPARATOR ', ')
                 FROM cities
                 JOIN states ON cities.state_id = states.id
                 WHERE states.name = %s
