@@ -1,28 +1,31 @@
 #!/usr/bin/python3
-# Script that takes in an argument and displays all values
-import MySQLdb
-from sys import argv
+"""Module for State class"""
 
-if len(argv) is 5:
+import MySQLdb
+import sys
+
+
+if __name__ == '__main__':
+    """Function main"""
+    args = sys.argv
     db = MySQLdb.connect(
         host='localhost',
-        user=argv[1],
-        passwd=argv[2],
-        db=argv[3],
-        port=3306
+        port=3306,
+        user=args[1],
+        password=args[2],
+        database=args[3],
     )
 
     cursor = db.cursor()
-
-    cursor.execute(
-        "SELECT cities.name\
-        FROM cities LEFT JOIN states ON cities.state_id = states.id\
-        WHERE states.name = '%s' ORDER BY cities.id;" % argv[4]
-    )
-#    print('Total Row(s):', cursor.rowcount)
+    query = "SELECT cities.name FROM cities\
+        INNER JOIN states ON cities.state_id = states.id\
+            WHERE states.name = %s"
+    cursor.execute(query, (args[4],))
     rows = cursor.fetchall()
-    new_list = []
+    keys = []
     for row in rows:
-        new_list.append(row[0])
-#        new_list.append(row)
-    print(", ".join(new_list))
+        for key in row:
+            keys.append(key)
+    print(', '.join(item for item in keys))
+    cursor.close()
+    db.close()
