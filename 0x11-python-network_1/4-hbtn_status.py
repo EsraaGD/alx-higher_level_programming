@@ -9,7 +9,7 @@ def fetch_stat_req():
     url = "https://alx-intranet.hbtn.io/status"
     response = requests.get(url)
     content = response.text
-    print("Body resonse:")
+    print("Body response:")
     print("\t- type:", type(content))
     print("\t- content:", content)
 
