@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-#comment
+#a function that finds a peak in a list of unsorted integers.
