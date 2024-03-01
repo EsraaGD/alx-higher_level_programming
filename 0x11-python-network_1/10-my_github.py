@@ -12,10 +12,9 @@ def display_gitid(username, password):
 
     if response.status_code == 200:
         user_data = response.json()
-        print("User ID:", user_data["id"])
+        print(user_data["id"])
     else:
-        print("Failed to fetch user ID.")
-        print("HTTP status code:", response.status_code)
+        print(None)
 
 
 if __name__ == "__main__":
