@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Function to find peak"""
+
+
 def find_peak(list_of_integers):
     """
     Find a peak in a list of unsorted integers.
@@ -10,7 +13,7 @@ def find_peak(list_of_integers):
     - The peak integer found in the list.
     - None if the list is empty.
     """
-    if not list_of_integers:
+    if not list_of_integers or list_of_integers == []:
         return None
 
     return max(list_of_integers)
