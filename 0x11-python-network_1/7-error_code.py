@@ -10,8 +10,8 @@ def err2(url):
     followed by the HTTP status code"""
 
     response = requests.get(url)
-    if response.statcode >= 400:
-        print("Error code:", response.statcode)
+    if response.status_code >= 400:
+        print("Error code:", response.status_code)
     else:
         print(response.text)
 
