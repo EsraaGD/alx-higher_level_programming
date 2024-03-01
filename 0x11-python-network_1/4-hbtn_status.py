@@ -6,7 +6,7 @@ import requests
 def fetch_stat_req():
     """must use requests"""
 
-    url = ""
+    url = "https://alx-intranet.hbtn.io/status"
     response = requests.get(url)
     content = response.text
     print("Body resonse:")
